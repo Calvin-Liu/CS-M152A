@@ -1,0 +1,34 @@
+1) clk_en enables the clock since it is a sequential circuit.
+The rising edge is the trigger and is necessary to determine the
+next cycle of the circuit.This is why we toggle the clk every 5
+miliseconds so it switches from high and low.
+
+2)The period turns out to be 1.3107ms
+
+3)Its 0
+
+4)
+
+1)
+
+2) 5.2439 ms
+
+3) Even though clk_en and clk_en_d have the same value, the clk_en_d
+has to execute later and thus the clock cycle has to be delayed.
+It has to be done later because the step_d has to be executed 
+first.
+
+4)
+
+5)
+
+1) If the rst is set to 1, the for loop goes through each register
+and sets it to 0. If the rst is not enabled, then the register file
+specified by 2 bits, represented by i_wsel takes the data of
+i_wdata. Then the output data is set for whenever the user wants
+the data from the rf (register file).
+
+2)    assign o_data_a = rf[i_sel_a];
+   assign o_data_b = rf[i_sel_b];
+   
+This is combinational logic

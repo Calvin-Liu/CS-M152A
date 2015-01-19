@@ -1,0 +1,3 @@
+verilog isim_temp "Stopwatch.v"
+verilog isim_temp "testMain.v"
+verilog isim_temp "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"

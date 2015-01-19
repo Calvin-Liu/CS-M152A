@@ -1,0 +1,650 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\152\Desktop\12-2\Stopwatch.v" into library work
+Parsing module <seconds>.
+Parsing module <minutes>.
+Parsing module <clock>.
+Parsing module <main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <main>.
+
+Elaborating module <clock>.
+WARNING:HDLCompiler:872 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 93: Using initial value of add1 since it is never assigned
+WARNING:HDLCompiler:1127 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 163: Assignment to clock3 ignored, since the identifier is never used
+
+Elaborating module <seconds>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 62: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 164: Size mismatch in connection of port <overflow>. Formal port size is 32-bit while actual signal size is 1-bit.
+
+Elaborating module <minutes>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 80: Result of 8-bit expression is truncated to fit in 7-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <main>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+INFO:Xst:3210 - "C:\Users\152\Desktop\12-2\Stopwatch.v" line 163: Output port <clock3> of the instance <myclock> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\152\Desktop\12-2\Stopwatch.v" line 163: Output port <clock4> of the instance <myclock> is unconnected or connected to loadless signal.
+    Found 7-bit register for signal <minutesCount>.
+    Found 1-bit register for signal <clock_in>.
+    Found 1-bit register for signal <enableSeconds>.
+    Found 1-bit register for signal <enableMinutes>.
+    Found 6-bit register for signal <secondsCount>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <main> synthesized.
+
+Synthesizing Unit <clock>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 1-bit register for signal <clock1>.
+    Found 32-bit register for signal <Hz2>.
+    Found 1-bit register for signal <clock2>.
+    Found 32-bit register for signal <Hz3>.
+    Found 1-bit register for signal <clock3>.
+    Found 32-bit register for signal <Hz4>.
+    Found 1-bit register for signal <clock4>.
+    Found 32-bit register for signal <Hz1>.
+    Found 32-bit adder for signal <Hz1[31]_GND_2_o_add_2_OUT> created at line 111.
+    Found 32-bit adder for signal <Hz2[31]_GND_2_o_add_5_OUT> created at line 122.
+    Found 32-bit adder for signal <Hz3[31]_GND_2_o_add_8_OUT> created at line 132.
+    Found 32-bit adder for signal <Hz4[31]_GND_2_o_add_11_OUT> created at line 142.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred 132 D-type flip-flop(s).
+Unit <clock> synthesized.
+
+Synthesizing Unit <seconds>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 6-bit register for signal <count>.
+    Found 32-bit register for signal <overflow>.
+    Found 6-bit adder for signal <count[5]_GND_3_o_add_1_OUT> created at line 62.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <seconds> synthesized.
+
+Synthesizing Unit <minutes>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 7-bit register for signal <countmin>.
+    Found 7-bit adder for signal <countmin[6]_GND_4_o_add_3_OUT> created at line 80.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   7 D-type flip-flop(s).
+Unit <minutes> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 32-bit adder                                          : 4
+ 6-bit adder                                           : 1
+ 7-bit adder                                           : 1
+# Registers                                            : 16
+ 1-bit register                                        : 7
+ 32-bit register                                       : 5
+ 6-bit register                                        : 2
+ 7-bit register                                        : 2
+# Multiplexers                                         : 2
+ 1-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <overflow_1> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_2> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_3> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_4> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_5> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_6> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_7> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_8> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_9> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_10> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_11> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_12> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_13> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_14> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_15> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_16> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_17> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_18> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_19> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_20> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_21> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_22> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_23> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_24> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_25> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_26> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_27> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_28> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_29> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_30> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_31> of sequential type is unconnected in block <secondsCounter1Hz>.
+
+Synthesizing (advanced) Unit <clock>.
+The following registers are absorbed into counter <Hz2>: 1 register on signal <Hz2>.
+The following registers are absorbed into counter <Hz4>: 1 register on signal <Hz4>.
+The following registers are absorbed into counter <Hz3>: 1 register on signal <Hz3>.
+The following registers are absorbed into counter <Hz1>: 1 register on signal <Hz1>.
+Unit <clock> synthesized (advanced).
+
+Synthesizing (advanced) Unit <minutes>.
+The following registers are absorbed into counter <countmin>: 1 register on signal <countmin>.
+Unit <minutes> synthesized (advanced).
+
+Synthesizing (advanced) Unit <seconds>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <seconds> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 6
+ 32-bit up counter                                     : 4
+ 6-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <overflow_31> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_30> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_29> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_28> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_27> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_26> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_25> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_24> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_23> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_22> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_21> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_20> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_19> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_18> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_17> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_16> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_15> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_14> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_13> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_12> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_11> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_10> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_9> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_8> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_7> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_6> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_5> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_4> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_3> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_2> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_1> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <main> ...
+
+Optimizing unit <clock> ...
+WARNING:Xst:2677 - Node <myclock/Hz3_31> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_30> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_29> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_28> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_27> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_26> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_25> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_24> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_23> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_22> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_21> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_20> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_19> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_18> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_17> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_16> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_15> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_14> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_13> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_12> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_11> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_10> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz3_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_31> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_30> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_29> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_28> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_27> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_26> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_25> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_24> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_23> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_22> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_21> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_20> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_19> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_18> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_17> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_16> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_15> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_14> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_13> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_12> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_11> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_10> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/Hz4_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/clock4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <myclock/clock3> of sequential type is unconnected in block <main>.
+WARNING:Xst:1293 - FF/Latch <myclock/Hz1_31> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <myclock/Hz1_30> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <myclock/Hz2_31> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <myclock/Hz2_30> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <myclock/Hz2_29> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 91
+ Flip-Flops                                            : 91
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 282
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 57
+#      LUT2                        : 69
+#      LUT3                        : 4
+#      LUT4                        : 4
+#      LUT5                        : 1
+#      LUT6                        : 25
+#      MUXCY                       : 57
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 59
+# FlipFlops/Latches                : 91
+#      FD                          : 85
+#      FDC                         : 1
+#      FDCE                        : 5
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 3
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              78  out of  18224     0%  
+ Number of Slice LUTs:                  162  out of   9112     1%  
+    Number used as Logic:               162  out of   9112     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    162
+   Number with an unused Flip Flop:      84  out of    162    51%  
+   Number with an unused LUT:             0  out of    162     0%  
+   Number of fully used LUT-FF pairs:    78  out of    162    48%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    232     7%  
+    IOB Flip Flops/Latches:              13
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)          | Load  |
+-----------------------------------+--------------------------------+-------+
+masterclock                        | BUFGP                          | 77    |
+clock_in                           | NONE(secondsCounter1Hz/count_0)| 14    |
+-----------------------------------+--------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.087ns (Maximum Frequency: 244.657MHz)
+   Minimum input arrival time before clock: 3.705ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'masterclock'
+  Clock period: 4.087ns (frequency: 244.657MHz)
+  Total number of paths / destination ports: 2704 / 62
+-------------------------------------------------------------------------
+Delay:               4.087ns (Levels of Logic = 3)
+  Source:            myclock/Hz1_18 (FF)
+  Destination:       myclock/clock1 (FF)
+  Source Clock:      masterclock rising
+  Destination Clock: masterclock rising
+
+  Data Path: myclock/Hz1_18 to myclock/clock1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.961  myclock/Hz1_18 (myclock/Hz1_18)
+     LUT5:I0->O            2   0.203   0.961  myclock/Hz1[31]_GND_2_o_equal_2_o<31>6 (myclock/Hz1[31]_GND_2_o_equal_2_o<31>5)
+     LUT6:I1->O           16   0.203   1.005  myclock/Hz1[31]_GND_2_o_equal_2_o<31>7 (myclock/Hz1[31]_GND_2_o_equal_2_o)
+     LUT2:I1->O            1   0.205   0.000  myclock/Hz1_29_rstpot (myclock/Hz1_29_rstpot)
+     FD:D                      0.102          myclock/Hz1_29
+    ----------------------------------------
+    Total                      4.087ns (1.160ns logic, 2.927ns route)
+                                       (28.4% logic, 71.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_in'
+  Clock period: 3.646ns (frequency: 274.281MHz)
+  Total number of paths / destination ports: 137 / 19
+-------------------------------------------------------------------------
+Delay:               3.646ns (Levels of Logic = 2)
+  Source:            secondsCounter1Hz/count_2 (FF)
+  Destination:       secondsCounter1Hz/count_0 (FF)
+  Source Clock:      clock_in rising
+  Destination Clock: clock_in rising
+
+  Data Path: secondsCounter1Hz/count_2 to secondsCounter1Hz/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.447   1.138  secondsCounter1Hz/count_2 (secondsCounter1Hz/count_2)
+     LUT6:I0->O            2   0.203   0.617  secondsCounter1Hz/_n002711 (secondsCounter1Hz/_n00271)
+     LUT2:I1->O            5   0.205   0.714  secondsCounter1Hz/_n0032_inv1 (secondsCounter1Hz/_n0032_inv)
+     FDCE:CE                   0.322          secondsCounter1Hz/count_0
+    ----------------------------------------
+    Total                      3.646ns (1.177ns logic, 2.469ns route)
+                                       (32.3% logic, 67.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'masterclock'
+  Total number of paths / destination ports: 5 / 3
+-------------------------------------------------------------------------
+Offset:              2.408ns (Levels of Logic = 2)
+  Source:            adj (PAD)
+  Destination:       clock_in (FF)
+  Destination Clock: masterclock rising
+
+  Data Path: adj to clock_in
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   0.879  adj_IBUF (adj_IBUF)
+     LUT3:I0->O            1   0.205   0.000  Mmux_clock_in_clock1_MUX_57_o11 (clock_in_clock1_MUX_57_o)
+     FD:D                      0.102          clock_in
+    ----------------------------------------
+    Total                      2.408ns (1.529ns logic, 0.879ns route)
+                                       (63.5% logic, 36.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_in'
+  Total number of paths / destination ports: 16 / 14
+-------------------------------------------------------------------------
+Offset:              3.705ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       minutesCounter1Hz/countmin_4 (FF)
+  Destination Clock: clock_in rising
+
+  Data Path: rst to minutesCounter1Hz/countmin_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.222   1.322  rst_IBUF (rst_IBUF)
+     LUT6:I0->O            3   0.203   0.651  minutesCounter1Hz/rstmin_GND_4_o_OR_32_o (minutesCounter1Hz/rstmin_GND_4_o_OR_32_o)
+     LUT2:I1->O            1   0.205   0.000  minutesCounter1Hz/countmin_6_rstpot1 (minutesCounter1Hz/countmin_6_rstpot1)
+     FD:D                      0.102          minutesCounter1Hz/countmin_6
+    ----------------------------------------
+    Total                      3.705ns (1.732ns logic, 1.973ns route)
+                                       (46.7% logic, 53.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'masterclock'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            secondsCount_5 (FF)
+  Destination:       secondsCount<5> (PAD)
+  Source Clock:      masterclock rising
+
+  Data Path: secondsCount_5 to secondsCount<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  secondsCount_5 (secondsCount_5)
+     OBUF:I->O                 2.571          secondsCount_5_OBUF (secondsCount<5>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clock_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock_in       |    3.646|         |         |         |
+masterclock    |    3.560|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock masterclock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock_in       |    1.351|         |         |         |
+masterclock    |    4.087|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.69 secs
+ 
+--> 
+
+Total memory usage is 254220 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  138 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

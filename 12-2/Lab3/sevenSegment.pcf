@@ -1,0 +1,63 @@
+//! **************************************************************************
+// Written by: Map P.68d on Mon Nov 24 13:59:31 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "btn2" LOCATE = SITE "T10" LEVEL 1;
+COMP "btn3" LOCATE = SITE "C4" LEVEL 1;
+COMP "btnR" LOCATE = SITE "D9" LEVEL 1;
+COMP "btnS" LOCATE = SITE "T9" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "T17" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "T18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "U18" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
+COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "btnADJ" BEL "btnSEL" BEL "btnRST" BEL "btnPAUSE"
+        BEL "seconds1_0" BEL "seconds1_1" BEL "seconds1_2" BEL "seconds1_3"
+        BEL "minutes1_0" BEL "minutes1_1" BEL "minutes1_2" BEL "minutes1_3"
+        BEL "minutes2_0" BEL "minutes2_1" BEL "minutes2_2" BEL "minutes2_3"
+        BEL "seconds2_0" BEL "seconds2_1" BEL "seconds2_2" BEL
+        "M/minutesCount_6" BEL "M/minutesCount_5" BEL "M/minutesCount_4" BEL
+        "M/minutesCount_3" BEL "M/minutesCount_2" BEL "M/minutesCount_1" BEL
+        "M/minutesCount_0" BEL "M/secondsCount_5" BEL "M/secondsCount_4" BEL
+        "M/secondsCount_3" BEL "M/secondsCount_2" BEL "M/secondsCount_1" BEL
+        "M/secondsCount_0" BEL "M/clock_in" BEL "M/enableMinutes" BEL
+        "M/enableSeconds" BEL "c/clock4" BEL "c/clock3" BEL "c/clock2" BEL
+        "c/clock1" BEL "M/enableMaster" BEL "enableDebounce" BEL "c/Hz1_25"
+        BEL "c/Hz1_24" BEL "c/Hz1_23" BEL "c/Hz1_22" BEL "c/Hz1_21" BEL
+        "c/Hz1_20" BEL "c/Hz1_19" BEL "c/Hz1_18" BEL "c/Hz1_17" BEL "c/Hz1_16"
+        BEL "c/Hz1_15" BEL "c/Hz1_14" BEL "c/Hz1_13" BEL "c/Hz1_12" BEL
+        "c/Hz1_11" BEL "c/Hz1_10" BEL "c/Hz1_9" BEL "c/Hz1_8" BEL "c/Hz1_7"
+        BEL "c/Hz1_6" BEL "c/Hz1_5" BEL "c/Hz1_4" BEL "c/Hz1_3" BEL "c/Hz1_2"
+        BEL "c/Hz1_1" BEL "c/Hz1_0" BEL "c/Hz2_24" BEL "c/Hz2_23" BEL
+        "c/Hz2_22" BEL "c/Hz2_21" BEL "c/Hz2_20" BEL "c/Hz2_19" BEL "c/Hz2_18"
+        BEL "c/Hz2_17" BEL "c/Hz2_16" BEL "c/Hz2_15" BEL "c/Hz2_14" BEL
+        "c/Hz2_13" BEL "c/Hz2_12" BEL "c/Hz2_11" BEL "c/Hz2_10" BEL "c/Hz2_9"
+        BEL "c/Hz2_8" BEL "c/Hz2_7" BEL "c/Hz2_6" BEL "c/Hz2_5" BEL "c/Hz2_4"
+        BEL "c/Hz2_3" BEL "c/Hz2_2" BEL "c/Hz2_1" BEL "c/Hz2_0" BEL "c/Hz4_23"
+        BEL "c/Hz4_22" BEL "c/Hz4_21" BEL "c/Hz4_20" BEL "c/Hz4_19" BEL
+        "c/Hz4_18" BEL "c/Hz4_17" BEL "c/Hz4_16" BEL "c/Hz4_15" BEL "c/Hz4_14"
+        BEL "c/Hz4_13" BEL "c/Hz4_12" BEL "c/Hz4_11" BEL "c/Hz4_10" BEL
+        "c/Hz4_9" BEL "c/Hz4_8" BEL "c/Hz4_7" BEL "c/Hz4_6" BEL "c/Hz4_5" BEL
+        "c/Hz4_4" BEL "c/Hz4_3" BEL "c/Hz4_2" BEL "c/Hz4_1" BEL "c/Hz4_0" BEL
+        "debounceCount_0" BEL "debounceCount_1" BEL "debounceCount_2" BEL
+        "debounceCount_3" BEL "debounceCount_4" BEL "debounceCount_5" BEL
+        "debounceCount_6" BEL "debounceCount_7" BEL "debounceCount_8" BEL
+        "debounceCount_9" BEL "debounceCount_10" BEL "debounceCount_11" BEL
+        "debounceCount_12" BEL "debounceCount_13" BEL "debounceCount_14" BEL
+        "debounceCount_15" BEL "debounceCount_16" BEL "c/Hz3_16" BEL
+        "c/Hz3_15" BEL "c/Hz3_14" BEL "c/Hz3_13" BEL "c/Hz3_12" BEL "c/Hz3_11"
+        BEL "c/Hz3_10" BEL "c/Hz3_9" BEL "c/Hz3_8" BEL "c/Hz3_7" BEL "c/Hz3_6"
+        BEL "c/Hz3_5" BEL "c/Hz3_4" BEL "c/Hz3_3" BEL "c/Hz3_2" BEL "c/Hz3_1"
+        BEL "c/Hz3_0" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

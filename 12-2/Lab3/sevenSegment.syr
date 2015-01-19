@@ -1,0 +1,926 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: sevenSegment.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "sevenSegment.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "sevenSegment"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : sevenSegment
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\152\Desktop\12-2\Stopwatch.v" into library work
+Parsing module <seconds>.
+Parsing module <minutes>.
+Parsing module <clock>.
+Parsing module <main>.
+Parsing module <sevenSegment>.
+WARNING:HDLCompiler:751 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 221: Redeclaration of ansi port an is not allowed
+WARNING:HDLCompiler:751 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 222: Redeclaration of ansi port seg is not allowed
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <sevenSegment>.
+WARNING:HDLCompiler:872 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 241: Using initial value of ten since it is never assigned
+
+Elaborating module <clock>.
+WARNING:HDLCompiler:872 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 83: Using initial value of add1 since it is never assigned
+
+Elaborating module <main>.
+
+Elaborating module <seconds>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 52: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 155: Size mismatch in connection of port <overflow>. Formal port size is 32-bit while actual signal size is 1-bit.
+
+Elaborating module <minutes>.
+WARNING:HDLCompiler:413 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 70: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:91 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 318: Signal <enableLight> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 323: Signal <seconds1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 328: Signal <seconds2> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 333: Signal <minutes1> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "C:\Users\152\Desktop\12-2\Stopwatch.v" Line 338: Signal <minutes2> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <sevenSegment>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 32-bit register for signal <debounceCount>.
+    Found 1-bit register for signal <btnADJ>.
+    Found 1-bit register for signal <btnSEL>.
+    Found 1-bit register for signal <btnRST>.
+    Found 1-bit register for signal <btnPAUSE>.
+    Found 1-bit register for signal <enableDebounce>.
+    Found 32-bit register for signal <caseStatements>.
+    Found 1-bit register for signal <enableLight>.
+    Found 4-bit register for signal <seconds1>.
+    Found 4-bit register for signal <minutes1>.
+    Found 7-bit register for signal <minutes2>.
+    Found 6-bit register for signal <seconds2>.
+    Found 32-bit adder for signal <debounceCount[31]_GND_1_o_add_5_OUT> created at line 259.
+    Found 32-bit adder for signal <caseStatements[31]_GND_1_o_add_18_OUT> created at line 286.
+    Found 4x4-bit Read Only RAM for signal <_n0354>
+    Found 1-bit 4-to-1 multiplexer for signal <_n0178> created at line 320.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0188> created at line 320.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0240> created at line 320.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0250> created at line 320.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0280> created at line 320.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0290> created at line 320.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <an<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sseg_num<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    WARNING:Xst:2404 -  FFs/Latches <seconds1<31:4>> (without init value) have a constant value of 0 in block <sevenSegment>.
+    WARNING:Xst:2404 -  FFs/Latches <minutes1<31:4>> (without init value) have a constant value of 0 in block <sevenSegment>.
+    WARNING:Xst:2404 -  FFs/Latches <minutes2<31:7>> (without init value) have a constant value of 0 in block <sevenSegment>.
+    WARNING:Xst:2404 -  FFs/Latches <seconds2<31:6>> (without init value) have a constant value of 0 in block <sevenSegment>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  91 D-type flip-flop(s).
+	inferred  12 Latch(s).
+	inferred   8 Multiplexer(s).
+Unit <sevenSegment> synthesized.
+
+Synthesizing Unit <clock>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 1-bit register for signal <clock1>.
+    Found 32-bit register for signal <Hz2>.
+    Found 1-bit register for signal <clock2>.
+    Found 32-bit register for signal <Hz3>.
+    Found 1-bit register for signal <clock3>.
+    Found 32-bit register for signal <Hz4>.
+    Found 1-bit register for signal <clock4>.
+    Found 32-bit register for signal <Hz1>.
+    Found 32-bit adder for signal <Hz1[31]_GND_2_o_add_2_OUT> created at line 101.
+    Found 32-bit adder for signal <Hz2[31]_GND_2_o_add_5_OUT> created at line 112.
+    Found 32-bit adder for signal <Hz3[31]_GND_2_o_add_8_OUT> created at line 123.
+    Found 32-bit adder for signal <Hz4[31]_GND_2_o_add_11_OUT> created at line 134.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred 132 D-type flip-flop(s).
+Unit <clock> synthesized.
+
+Synthesizing Unit <main>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 6-bit register for signal <secondsCount>.
+    Found 7-bit register for signal <minutesCount>.
+    Found 1-bit register for signal <clock_in>.
+    Found 1-bit register for signal <enableSeconds>.
+    Found 1-bit register for signal <enableMinutes>.
+    Found 1-bit register for signal <enableMaster>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <main> synthesized.
+
+Synthesizing Unit <seconds>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 6-bit register for signal <count>.
+    Found 32-bit register for signal <overflow>.
+    Found 6-bit adder for signal <count[5]_GND_4_o_add_2_OUT> created at line 52.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <seconds> synthesized.
+
+Synthesizing Unit <minutes>.
+    Related source file is "C:\Users\152\Desktop\12-2\Stopwatch.v".
+    Found 7-bit register for signal <countmin>.
+    Found 7-bit adder for signal <countmin[6]_GND_5_o_add_2_OUT> created at line 70.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   7 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <minutes> synthesized.
+
+Synthesizing Unit <mod_6u_4u>.
+    Related source file is "".
+    Found 10-bit adder for signal <GND_6_o_b[3]_add_1_OUT> created at line 0.
+    Found 9-bit adder for signal <GND_6_o_b[3]_add_3_OUT> created at line 0.
+    Found 8-bit adder for signal <GND_6_o_b[3]_add_5_OUT> created at line 0.
+    Found 7-bit adder for signal <GND_6_o_b[3]_add_7_OUT> created at line 0.
+    Found 6-bit adder for signal <a[5]_b[3]_add_9_OUT> created at line 0.
+    Found 6-bit adder for signal <a[5]_GND_6_o_add_11_OUT> created at line 0.
+    Found 6-bit adder for signal <a[5]_GND_6_o_add_13_OUT> created at line 0.
+    Found 10-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 6-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 6-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 6-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+	inferred  37 Multiplexer(s).
+Unit <mod_6u_4u> synthesized.
+
+Synthesizing Unit <div_6u_4u>.
+    Related source file is "".
+    Found 10-bit adder for signal <GND_7_o_b[3]_add_1_OUT> created at line 0.
+    Found 9-bit adder for signal <GND_7_o_b[3]_add_3_OUT> created at line 0.
+    Found 8-bit adder for signal <GND_7_o_b[3]_add_5_OUT> created at line 0.
+    Found 7-bit adder for signal <GND_7_o_b[3]_add_7_OUT> created at line 0.
+    Found 6-bit adder for signal <a[5]_b[3]_add_9_OUT[5:0]> created at line 0.
+    Found 6-bit adder for signal <a[5]_GND_7_o_add_11_OUT[5:0]> created at line 0.
+    Found 10-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 6-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 6-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 6-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+	inferred  21 Multiplexer(s).
+Unit <div_6u_4u> synthesized.
+
+Synthesizing Unit <mod_7u_4u>.
+    Related source file is "".
+    Found 11-bit adder for signal <GND_8_o_b[3]_add_1_OUT> created at line 0.
+    Found 10-bit adder for signal <GND_8_o_b[3]_add_3_OUT> created at line 0.
+    Found 9-bit adder for signal <GND_8_o_b[3]_add_5_OUT> created at line 0.
+    Found 8-bit adder for signal <GND_8_o_b[3]_add_7_OUT> created at line 0.
+    Found 7-bit adder for signal <a[6]_b[3]_add_9_OUT> created at line 0.
+    Found 7-bit adder for signal <a[6]_GND_8_o_add_11_OUT> created at line 0.
+    Found 7-bit adder for signal <a[6]_GND_8_o_add_13_OUT> created at line 0.
+    Found 7-bit adder for signal <a[6]_GND_8_o_add_15_OUT> created at line 0.
+    Found 11-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+	inferred  50 Multiplexer(s).
+Unit <mod_7u_4u> synthesized.
+
+Synthesizing Unit <div_7u_4u>.
+    Related source file is "".
+    Found 11-bit adder for signal <GND_9_o_b[3]_add_1_OUT> created at line 0.
+    Found 10-bit adder for signal <GND_9_o_b[3]_add_3_OUT> created at line 0.
+    Found 9-bit adder for signal <GND_9_o_b[3]_add_5_OUT> created at line 0.
+    Found 8-bit adder for signal <GND_9_o_b[3]_add_7_OUT> created at line 0.
+    Found 7-bit adder for signal <a[6]_b[3]_add_9_OUT[6:0]> created at line 0.
+    Found 7-bit adder for signal <a[6]_GND_9_o_add_11_OUT[6:0]> created at line 0.
+    Found 7-bit adder for signal <a[6]_GND_9_o_add_13_OUT[6:0]> created at line 0.
+    Found 11-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 7-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+	inferred  31 Multiplexer(s).
+Unit <div_7u_4u> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x4-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 36
+ 10-bit adder                                          : 4
+ 11-bit adder                                          : 2
+ 32-bit adder                                          : 6
+ 6-bit adder                                           : 6
+ 7-bit adder                                           : 10
+ 8-bit adder                                           : 4
+ 9-bit adder                                           : 4
+# Registers                                            : 29
+ 1-bit register                                        : 14
+ 32-bit register                                       : 7
+ 4-bit register                                        : 2
+ 6-bit register                                        : 3
+ 7-bit register                                        : 3
+# Latches                                              : 12
+ 1-bit latch                                           : 12
+# Comparators                                          : 30
+ 10-bit comparator lessequal                           : 4
+ 11-bit comparator lessequal                           : 2
+ 6-bit comparator lessequal                            : 6
+ 7-bit comparator lessequal                            : 10
+ 8-bit comparator lessequal                            : 4
+ 9-bit comparator lessequal                            : 4
+# Multiplexers                                         : 151
+ 1-bit 2-to-1 multiplexer                              : 133
+ 1-bit 4-to-1 multiplexer                              : 6
+ 4-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 5
+ 7-bit 2-to-1 multiplexer                              : 4
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <sseg_num_31> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <overflow_1> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_2> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_3> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_4> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_5> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_6> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_7> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_8> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_9> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_10> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_11> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_12> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_13> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_14> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_15> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_16> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_17> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_18> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_19> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_20> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_21> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_22> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_23> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_24> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_25> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_26> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_27> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_28> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_29> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_30> of sequential type is unconnected in block <secondsCounter1Hz>.
+WARNING:Xst:2677 - Node <overflow_31> of sequential type is unconnected in block <secondsCounter1Hz>.
+
+Synthesizing (advanced) Unit <clock>.
+The following registers are absorbed into counter <Hz2>: 1 register on signal <Hz2>.
+The following registers are absorbed into counter <Hz4>: 1 register on signal <Hz4>.
+The following registers are absorbed into counter <Hz3>: 1 register on signal <Hz3>.
+The following registers are absorbed into counter <Hz1>: 1 register on signal <Hz1>.
+Unit <clock> synthesized (advanced).
+
+Synthesizing (advanced) Unit <minutes>.
+The following registers are absorbed into counter <countmin>: 1 register on signal <countmin>.
+Unit <minutes> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sevenSegment>.
+The following registers are absorbed into counter <debounceCount>: 1 register on signal <debounceCount>.
+The following registers are absorbed into counter <caseStatements>: 1 register on signal <caseStatements>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0354> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <caseStatements<1:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <sevenSegment> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x4-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 29
+ 4-bit adder                                           : 2
+ 6-bit adder                                           : 13
+ 7-bit adder                                           : 14
+# Counters                                             : 7
+ 32-bit up counter                                     : 6
+ 7-bit up counter                                      : 1
+# Registers                                            : 86
+ Flip-Flops                                            : 86
+# Comparators                                          : 30
+ 10-bit comparator lessequal                           : 4
+ 11-bit comparator lessequal                           : 2
+ 6-bit comparator lessequal                            : 6
+ 7-bit comparator lessequal                            : 10
+ 8-bit comparator lessequal                            : 4
+ 9-bit comparator lessequal                            : 4
+# Multiplexers                                         : 149
+ 1-bit 2-to-1 multiplexer                              : 132
+ 1-bit 4-to-1 multiplexer                              : 6
+ 4-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 5
+ 7-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <overflow_31> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_30> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_29> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_28> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_27> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_26> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_25> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_24> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_23> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_22> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_21> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_20> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_19> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_18> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_17> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_16> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_15> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_14> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_13> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_12> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_11> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_10> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_9> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_8> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_7> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_6> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_5> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_4> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_3> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_2> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <overflow_1> (without init value) has a constant value of 0 in block <seconds>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sseg_num_31> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sseg_num_6> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sseg_num_5> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sseg_num_4> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <minutes2_4> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <minutes2_5> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <minutes2_6> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seconds2_3> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seconds2_4> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seconds2_5> (without init value) has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <sevenSegment> ...
+
+Optimizing unit <clock> ...
+
+Optimizing unit <main> ...
+
+Optimizing unit <seconds> ...
+WARNING:Xst:1293 - FF/Latch <c/Hz3_26> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_25> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_24> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_23> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_22> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_21> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_20> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_19> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_18> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_17> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_31> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_30> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_29> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_28> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_27> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_26> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_25> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz4_24> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_31> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_30> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_29> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_28> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_27> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_26> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz2_25> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_17> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_18> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_19> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_20> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_21> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_22> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_23> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_24> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_25> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_26> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_27> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_28> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_29> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_30> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <debounceCount_31> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz1_31> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz1_30> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz1_29> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz1_28> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz1_27> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz1_26> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_31> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_30> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_29> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_28> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c/Hz3_27> has a constant value of 0 in block <sevenSegment>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block sevenSegment, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 197
+ Flip-Flops                                            : 197
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : sevenSegment.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 660
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 135
+#      LUT2                        : 69
+#      LUT3                        : 6
+#      LUT4                        : 36
+#      LUT5                        : 40
+#      LUT6                        : 86
+#      MUXCY                       : 135
+#      VCC                         : 1
+#      XORCY                       : 141
+# FlipFlops/Latches                : 205
+#      FD                          : 162
+#      FDCE                        : 13
+#      FDE                         : 18
+#      FDR                         : 2
+#      FDRE                        : 1
+#      FDS                         : 1
+#      LDC                         : 2
+#      LDP                         : 6
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 4
+#      OBUF                        : 12
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             201  out of  18224     1%  
+ Number of Slice LUTs:                  382  out of   9112     4%  
+    Number used as Logic:               382  out of   9112     4%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    396
+   Number with an unused Flip Flop:     195  out of    396    49%  
+   Number with an unused LUT:            14  out of    396     3%  
+   Number of fully used LUT-FF pairs:   187  out of    396    47%  
+   Number of unique control sets:        10
+
+IO Utilization: 
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    232     7%  
+    IOB Flip Flops/Latches:               4
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------------------------------------+-------------------------------------+-------+
+Clock Signal                                                                             | Clock buffer(FF name)               | Load  |
+-----------------------------------------------------------------------------------------+-------------------------------------+-------+
+clk                                                                                      | BUFGP                               | 150   |
+c/clock4                                                                                 | NONE(enableLight)                   | 1     |
+caseStatements[31]_GND_1_o_equal_26_o<31>1(caseStatements[31]_GND_1_o_equal_26_o<31>16:O)| NONE(*)(an_3)                       | 8     |
+M/clock_in                                                                               | NONE(M/minutesCounter1Hz/countmin_6)| 14    |
+c/clock3                                                                                 | BUFG                                | 32    |
+-----------------------------------------------------------------------------------------+-------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.164ns (Maximum Frequency: 240.136MHz)
+   Minimum input arrival time before clock: 3.210ns
+   Maximum output required time after clock: 4.872ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.155ns (frequency: 240.685MHz)
+  Total number of paths / destination ports: 4110 / 153
+-------------------------------------------------------------------------
+Delay:               4.155ns (Levels of Logic = 2)
+  Source:            debounceCount_11 (FF)
+  Destination:       btnADJ (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: debounceCount_11 to btnADJ
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.447   0.995  debounceCount_11 (debounceCount_11)
+     LUT5:I0->O           19   0.203   1.300  debounceCount[31]_GND_1_o_equal_7_o<31>3 (debounceCount[31]_GND_1_o_equal_7_o<31>2)
+     LUT4:I1->O            4   0.205   0.683  _n03261 (_n0326)
+     FDE:CE                    0.322          btnADJ
+    ----------------------------------------
+    Total                      4.155ns (1.177ns logic, 2.978ns route)
+                                       (28.3% logic, 71.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'c/clock4'
+  Clock period: 2.163ns (frequency: 462.406MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.163ns (Levels of Logic = 1)
+  Source:            enableLight (FF)
+  Destination:       enableLight (FF)
+  Source Clock:      c/clock4 rising
+  Destination Clock: c/clock4 rising
+
+  Data Path: enableLight to enableLight
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              1   0.447   0.579  enableLight (enableLight)
+     INV:I->O              9   0.206   0.829  enableLight_inv1_INV_0 (enableLight_inv)
+     FDS:D                     0.102          enableLight
+    ----------------------------------------
+    Total                      2.163ns (0.755ns logic, 1.408ns route)
+                                       (34.9% logic, 65.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'M/clock_in'
+  Clock period: 3.633ns (frequency: 275.274MHz)
+  Total number of paths / destination ports: 180 / 29
+-------------------------------------------------------------------------
+Delay:               3.633ns (Levels of Logic = 2)
+  Source:            M/secondsCounter1Hz/count_5 (FF)
+  Destination:       M/secondsCounter1Hz/overflow_0 (FF)
+  Source Clock:      M/clock_in rising
+  Destination Clock: M/clock_in rising
+
+  Data Path: M/secondsCounter1Hz/count_5 to M/secondsCounter1Hz/overflow_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.447   1.118  M/secondsCounter1Hz/count_5 (M/secondsCounter1Hz/count_5)
+     LUT5:I0->O            3   0.203   0.651  M/secondsCounter1Hz/_n0047_inv111 (M/secondsCounter1Hz/_n0047_inv11)
+     LUT3:I2->O            1   0.205   0.579  M/secondsCounter1Hz/_n00361 (M/secondsCounter1Hz/_n0036)
+     FDRE:R                    0.430          M/secondsCounter1Hz/overflow_0
+    ----------------------------------------
+    Total                      3.633ns (1.285ns logic, 2.348ns route)
+                                       (35.4% logic, 64.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'c/clock3'
+  Clock period: 4.164ns (frequency: 240.136MHz)
+  Total number of paths / destination ports: 1552 / 32
+-------------------------------------------------------------------------
+Delay:               4.164ns (Levels of Logic = 3)
+  Source:            caseStatements_2 (FF)
+  Destination:       caseStatements_0 (FF)
+  Source Clock:      c/clock3 rising
+  Destination Clock: c/clock3 rising
+
+  Data Path: caseStatements_2 to caseStatements_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.981  caseStatements_2 (caseStatements_2)
+     LUT6:I0->O            3   0.203   0.995  caseStatements[31]_GND_1_o_equal_26_o<31>11 (caseStatements[31]_GND_1_o_equal_26_o<31>11)
+     LUT6:I1->O           17   0.203   1.028  caseStatements[31]_GND_1_o_equal_26_o<31>2 (caseStatements[31]_GND_1_o_equal_26_o)
+     LUT2:I1->O            1   0.205   0.000  caseStatements_0_rstpot (caseStatements_0_rstpot)
+     FD:D                      0.102          caseStatements_0
+    ----------------------------------------
+    Total                      4.164ns (1.160ns logic, 3.004ns route)
+                                       (27.9% logic, 72.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 8 / 5
+-------------------------------------------------------------------------
+Offset:              3.210ns (Levels of Logic = 3)
+  Source:            btn2 (PAD)
+  Destination:       enableDebounce (FF)
+  Destination Clock: clk rising
+
+  Data Path: btn2 to enableDebounce
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   0.898  btn2_IBUF (btn2_IBUF)
+     LUT4:I0->O            1   0.203   0.580  btnS_btn2_OR_35_o1 (btnS_btn2_OR_35_o)
+     LUT5:I4->O            1   0.205   0.000  enableDebounce_rstpot (enableDebounce_rstpot)
+     FD:D                      0.102          enableDebounce
+    ----------------------------------------
+    Total                      3.210ns (1.732ns logic, 1.478ns route)
+                                       (54.0% logic, 46.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'c/clock4'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.087ns (Levels of Logic = 2)
+  Source:            btn2 (PAD)
+  Destination:       enableLight (FF)
+  Destination Clock: c/clock4 rising
+
+  Data Path: btn2 to enableLight
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   0.650  btn2_IBUF (btn2_IBUF)
+     INV:I->O              1   0.206   0.579  btn2_inv1_INV_0 (btn2_inv)
+     FDS:S                     0.430          enableLight
+    ----------------------------------------
+    Total                      3.087ns (1.858ns logic, 1.229ns route)
+                                       (60.2% logic, 39.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'caseStatements[31]_GND_1_o_equal_26_o<31>1'
+  Total number of paths / destination ports: 32 / 11
+-------------------------------------------------------------------------
+Offset:              4.872ns (Levels of Logic = 2)
+  Source:            sseg_num_2 (LATCH)
+  Destination:       seg<6> (PAD)
+  Source Clock:      caseStatements[31]_GND_1_o_equal_26_o<31>1 falling
+
+  Data Path: sseg_num_2 to seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              7   0.498   1.021  sseg_num_2 (sseg_num_2)
+     LUT4:I0->O            1   0.203   0.579  _n0230<2>1 (seg_6_OBUF)
+     OBUF:I->O                 2.571          seg_6_OBUF (seg<6>)
+    ----------------------------------------
+    Total                      4.872ns (3.272ns logic, 1.600ns route)
+                                       (67.2% logic, 32.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock M/clock_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+M/clock_in     |    3.633|         |         |         |
+clk            |    2.894|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock c/clock3
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+c/clock3       |    4.164|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock c/clock4
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+c/clock4       |    2.163|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock caseStatements[31]_GND_1_o_equal_26_o<31>1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+c/clock3       |         |         |    1.908|         |
+c/clock4       |         |         |    2.491|         |
+clk            |         |         |    1.514|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+M/clock_in     |    1.405|         |         |         |
+clk            |    4.155|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.13 secs
+ 
+--> 
+
+Total memory usage is 257356 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  152 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+
